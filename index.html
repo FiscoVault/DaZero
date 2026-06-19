@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DA ZERO Pizzeria - Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Garamond', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 3px solid #d4af37;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .tagline {
+            color: #d4af37;
+            font-style: italic;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .flag {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+        
+        .contact-info a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section {
+            margin: 40px 0;
+            border-left: 4px solid #d4af37;
+            padding-left: 20px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px dotted #d4af37;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+            padding-left: 10px;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 5px;
+            flex: 1;
+        }
+        
+        .item-desc {
+            font-size: 13px;
+            color: #bbb;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .item-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1B5E20;
+            white-space: nowrap;
+            margin-left: 20px;
+            min-width: 60px;
+            text-align: right;
+        }
+        
+        .price-options {
+            display: flex;
+            gap: 10px;
+            font-size: 12px;
+            color: #aaa;
+        }
+        
+        .sauces {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .sauces h4 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .sauce-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .sauce {
+            background: rgba(0,0,0,0.5);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            border: 1px solid #d4af37;
+        }
+        
+        .tagline-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #d4af37;
+            color: #d4af37;
+            font-style: italic;
+            font-size: 14px;
+        }
+        
+        .cta-button {
+            display: block;
+            background: linear-gradient(135deg, #1B5E20, #2E7D32);
+            color: white;
+            text-align: center;
+            padding: 15px 30px;
+            margin: 30px auto;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            max-width: 300px;
+            transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #2E7D32, #388E3C);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        .highlight {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+            }
+            
+            .item-price {
+                margin-left: 0;
+                margin-top: 8px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flag">🇮🇹 🇹🇳</div>
+        <div class="logo">DA ZERO</div>
+        <div class="tagline">Où la Méditerranée explose en bouche</div>
+        <div class="tagline">Pizza Napolitaine + Saveurs Tunisiennes</div>
+        <div class="contact-info">
+            📍 798 Bd Curé-Labelle, Chomedey, Laval QC<br>
+            📞 (514) 234-0313 | 🍕 <a href="https://www.ordarch.com" target="_blank">Commandez sur Ordarch</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- PIZZAS -->
+        <div class="section">
+            <h2 class="section-title">🍕 PIZZAS</h2>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">MARGHERITA</div>
+                    <div class="item-desc">Sauce tomate San Marzano, fior di latte, huile d'olive, origan, basilic, parmesan.</div>
+                </div>
+                <div class="item-price">18$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">TONNO</div>
+                    <div class="item-desc">Sauce tomate San Marzano, mozzarella, fior di latte, thon à l'huile d'olive, oignons rouges, olives, câpres, tomates cerises.</div>
+                </div>
+                <div class="item-price">23$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">POLLO</div>
+                    <div class="item-desc">Sauce tomate San Marzano ou sauce blanche, poulet, oignons rouges, poivrons, mozzarella, fior di latte, champignons, sauce pesto.</div>
+                </div>
+                <div class="item-price">23$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">PEPPERONI</div>
+                    <div class="item-desc">Sauce tomate San Marzano, pepperoni, mozzarella, fior di latte.</div>
+                </div>
+                <div class="item-price">22$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">BIANCA</div>
+                    <div class="item-desc">Sauce blanche, mozzarella, fior di latte, huile d'olive, origan, basilic, parmesan, tomates cerises.</div>
+                </div>
+                <div class="item-price">19$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">MEXICANA</div>
+                    <div class="item-desc">Sauce tomate San Marzano, viande hachée, oignons, poivrons mexicains, mozzarella, fior di latte.</div>
+                </div>
+                <div class="item-price">24$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">GAMBERETTO</div>
+                    <div class="item-desc">Sauce blanche, sauce pesto, crevettes, tomates cerises, oignons, mozzarella, fior di latte.</div>
+                </div>
+                <div class="item-price">25$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">BURRATA</div>
+                    <div class="item-desc">Sauce tomate San Marzano, burrata, tomates cerises, roquette, huile d'olive, origan, noisettes concassées, pesto, crème balsamique, mozzarella.</div>
+                </div>
+                <div class="item-price">28$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">SALMONE</div>
+                    <div class="item-desc">Sauce rosée, salmon, oignons, mozzarella, fior di latte, noix.</div>
+                </div>
+                <div class="item-price">25$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">SEI FORMAGGI</div>
+                    <div class="item-desc">Sauce blanche, mozzarella, fior di latte, fromage bleu, fromage de chèvre, gruyère, parmesan.</div>
+                </div>
+                <div class="item-price">24$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">ALL DRESSED</div>
+                    <div class="item-desc">Sauce tomate San Marzano, pepperoni, mozzarella, fior di latte, poivrons, champignons.</div>
+                </div>
+                <div class="item-price">24$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">PIZZA VÉGÉTARIENNE</div>
+                    <div class="item-desc">Sauce tomate San Marzano, mozzarella, fior di latte, poivrons, zucchini, aubergines, oignons, tomates cerises, champignons, olives.</div>
+                </div>
+                <div class="item-price">21$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">PIZZA DA ZERO</div>
+                    <div class="item-desc">Sauce blanche, steak, oignons caramélisés, olives, mozzarella, fior di latte, gruyère, champignons sautés.</div>
+                </div>
+                <div class="item-price">31$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">NUTELLA FRUITS SECS</div>
+                    <div class="item-desc">Nutella, noisettes concassées, amandes, pistaches, noix de pécan.</div>
+                </div>
+                <div class="item-price">18$</div>
+            </div>
+        </div>
+
+        <!-- SANDWICHS -->
+        <div class="section">
+            <h2 class="section-title">🥪 SANDWICHS</h2>
+            
+            <div class="highlight">
+                <strong style="color: #d4af37;">Format disponible:</strong><br>
+                🥪 <strong>MAKLOUB</strong> (pain tunisien) | <strong>PANUOZZO</strong> (pain italien)
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">POULET GRILLÉ</div>
+                    <div class="item-desc">Laitue, tomates, oignons crus, oignons caramélisés, poivrons sautés, olives vertes, mozzarella.</div>
+                </div>
+                <div class="price-options">
+                    <span>MAKLOUB: 16$ | 21$ (TRIO)</span>
+                    <span>PANUOZZO: 17$ | 22$ (TRIO)</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">POULET PANÉ</div>
+                    <div class="item-desc">Laitue, tomates, oignons crus, oignons caramélisés, poivrons sautés, olives vertes, mozzarella.</div>
+                </div>
+                <div class="price-options">
+                    <span>MAKLOUB: 17$ | 22$ (TRIO)</span>
+                    <span>PANUOZZO: 18$ | 23$ (TRIO)</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">MERGUEZ</div>
+                    <div class="item-desc">Laitue, tomates, oignons crus, oignons caramélisés, poivrons sautés, olives vertes, mozzarella.</div>
+                </div>
+                <div class="price-options">
+                    <span>MAKLOUB: 16$ | 21$ (TRIO)</span>
+                    <span>PANUOZZO: 17$ | 22$ (TRIO)</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">THON</div>
+                    <div class="item-desc">Laitue, tomates, oignons crus, oignons caramélisés, poivrons sautés, olives vertes, mozzarella.</div>
+                </div>
+                <div class="price-options">
+                    <span>MAKLOUB: 16$ | 21$ (TRIO)</span>
+                    <span>PANUOZZO: 17$ | 22$ (TRIO)</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">KEBAB</div>
+                    <div class="item-desc">Laitue, tomates, oignons crus, oignons caramélisés, poivrons sautés, olives vertes, mozzarella.</div>
+                </div>
+                <div class="price-options">
+                    <span>MAKLOUB: 16$ | 21$ (TRIO)</span>
+                    <span>PANUOZZO: 17$ | 22$ (TRIO)</span>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <strong style="color: #d4af37;">⭐ PRODUIT VEDETTE:</strong><br>
+                <strong>MAKLOUB DA ZERO</strong> | 21$ (SOLO) | 26$ (TRIO)<br>
+                <em>Steak, champignons, oignons crus, oignons caramélisés, poivrons sautés, sauce spéciale.</em><br><br>
+                <strong>PANUOZZO DA ZERO</strong> | 22$ (SOLO) | 27$ (TRIO)<br>
+                <em>Steak, champignons, oignons crus, oignons caramélisés, poivrons sautés, gruyère, sauce spéciale.</em>
+            </div>
+        </div>
+
+        <!-- CALZONES & AILES -->
+        <div class="section">
+            <h2 class="section-title">🌯 CALZONE & SPÉCIALITÉS</h2>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">CALZONE - THON</div>
+                    <div class="item-desc">Ingrédients: Sauce tomate, mozzarella, huile d'olive.</div>
+                </div>
+                <div class="item-price">16$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">CALZONE - POULET GRILLÉ</div>
+                    <div class="item-desc">Ingrédients: Sauce tomate, mozzarella, huile d'olive.</div>
+                </div>
+                <div class="item-price">16$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">CALZONE - CREVETTES</div>
+                    <div class="item-desc">Ingrédients: Sauce tomate, mozzarella, huile d'olive.</div>
+                </div>
+                <div class="item-price">18$</div>
+            </div>
+            
+            <h3 style="color: #d4af37; margin-top: 30px; margin-bottom: 15px;">🍗 AILES DE POULET</h3>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">6 AILES</div>
+                </div>
+                <div class="item-price">12$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">10 AILES</div>
+                </div>
+                <div class="item-price">18$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">14 AILES</div>
+                </div>
+                <div class="item-price">23$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">20 AILES</div>
+                </div>
+                <div class="item-price">30$</div>
+            </div>
+        </div>
+
+        <!-- MENU ENFANTS -->
+        <div class="section">
+            <h2 class="section-title">👶 MENU ENFANTS</h2>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">PIZZA BAMBINO</div>
+                    <div class="item-desc">(Margherita ou Pepperoni) + Frite + Jus</div>
+                </div>
+                <div class="item-price">13$</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">5 LANGUETTES DE POULET</div>
+                    <div class="item-desc">+ Frite + Jus</div>
+                </div>
+                <div class="item-price">13$</div>
+            </div>
+        </div>
+
+        <!-- EXTRAS -->
+        <div class="section">
+            <h2 class="section-title">➕ EXTRAS & SUPPLÉMENTS</h2>
+            
+            <h3 style="color: #d4af37; margin-top: 20px; margin-bottom: 10px;">Protéines</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <strong style="color: #d4af37;">Poulet Grillé</strong> - 5$<br>
+                    <strong style="color: #d4af37;">Poulet Pané</strong> - 5$<br>
+                    <strong style="color: #d4af37;">Kebab</strong> - 5$<br>
+                    <strong style="color: #d4af37;">Merguez</strong> - 5$
+                </div>
+                <div>
+                    <strong style="color: #d4af37;">Thon</strong> - 5$<br>
+                    <strong style="color: #d4af37;">Fromage Cheddar</strong> - 5$<br>
+                    <strong style="color: #d4af37;">Fromage Gruyère</strong> - 5$<br>
+                    <strong style="color: #d4af37;">Burrata</strong> - 8$
+                </div>
+            </div>
+            
+            <h3 style="color: #d4af37; margin-top: 20px; margin-bottom: 10px;">Légumes & Accompagnements</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <strong style="color: #d4af37;">Légume</strong> - 2$<br>
+                    <strong style="color: #d4af37;">Frites</strong> - 5,99$<br>
+                </div>
+                <div>
+                    <strong style="color: #d4af37;">Grandes Frites</strong> - 8,99$
+                </div>
+            </div>
+        </div>
+
+        <!-- SAUCES -->
+        <div class="sauces">
+            <h4>🌶️ CHOISISSEZ VOS SAUCES (3 options incluses)</h4>
+            <div class="sauce-list">
+                <div class="sauce">🌿 PESTO</div>
+                <div class="sauce">🤍 MAYONNAISE</div>
+                <div class="sauce">🔥 HARISSA (PIQUANTE)</div>
+                <div class="sauce">🧄 AIL</div>
+                <div class="sauce">🍖 BARBECUE</div>
+                <div class="sauce">🍅 KETCHUP</div>
+                <div class="sauce">🌟 ALGÉRIENNE</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="https://www.ordarch.com" target="_blank" class="cta-button">
+            📱 COMMANDEZ MAINTENANT SUR ORDARCH
+        </a>
+
+        <div class="tagline-bottom">
+            ✨ SAVEURS AUTHENTIQUES • PRODUITS FRAIS • FAIT MAISON ✨<br>
+            <br>
+            📍 798 Bd Curé-Labelle, Chomedey, Laval QC H7V 2V3<br>
+            📞 (514) 234-0313 | 🌐 @dazero_pizzeria
+        </div>
+    </div>
+</body>
+</html>
