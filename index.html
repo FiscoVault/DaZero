@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DA ZERO Pizzeria - Carrousel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="carousel-title">🍕 DA ZERO Pizzeria 🍕</div>
+        
+        <div class="carousel">
+            <!-- IMAGE 1 -->
+            <div class="carousel-slide active">
+                <img src="images/image1.jpg" alt="Image 1">
+            </div>
+
+            <!-- IMAGE 2 -->
+            <div class="carousel-slide">
+                <img src="images/image2.jpg" alt="Image 2">
+            </div>
+
+            <!-- IMAGE 3 -->
+            <div class="carousel-slide">
+                <img src="images/image3.jpg" alt="Image 3">
+            </div>
+
+            <!-- IMAGE 4 -->
+            <div class="carousel-slide">
+                <img src="images/image4.jpg" alt="Image 4">
+            </div>
+
+            <!-- Boutons Navigation -->
+            <button class="carousel-button prev" onclick="changeSlide(-1)">❮</button>
+            <button class="carousel-button next" onclick="changeSlide(1)">❯</button>
+
+            <!-- Indicateurs -->
+            <div class="carousel-indicators">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/carousel.js"></script>
+</body>
+</html>

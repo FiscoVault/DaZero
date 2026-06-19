@@ -1,0 +1,41 @@
+{
+  "name": "dazero-carousel",
+  "version": "1.0.0",
+  "description": "Carrousel interactif pour DA ZERO Pizzeria - Pizza italienne et saveurs tunisiennes",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html",
+    "build": "echo 'Project is ready to deploy'",
+    "deploy": "git add . && git commit -m 'Deploy' && git push origin main"
+  },
+  "keywords": [
+    "carousel",
+    "gallery",
+    "pizza",
+    "pizzeria",
+    "laval",
+    "quebec",
+    "responsive",
+    "interactive"
+  ],
+  "author": "DA ZERO Pizzeria",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/dazero-carousel.git"
+  },
+  "homepage": "https://github.com/username/dazero-carousel#readme",
+  "bugs": {
+    "url": "https://github.com/username/dazero-carousel/issues"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
